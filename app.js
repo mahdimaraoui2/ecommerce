@@ -22,6 +22,7 @@ mongoose.connect(process.env.dbcloud)
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname + '/'));
 
 app.get('/', (req, res) => {
     res.send('Hello World!');

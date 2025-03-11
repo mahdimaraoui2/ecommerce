@@ -6,6 +6,7 @@ const categorieRouter = require("./routes/categorie.route");
 const scategorieRouter = require('./routes/scategorie.route');
 const articleRouter = require('./routes/article.route'); 
 const chatbotRouter=require("./routes/chatbot.route")
+const userRouter = require("./routes/user.route");
 dotenv.config();
 
 const app = express();
@@ -30,6 +31,9 @@ app.use('/api/categories', categorieRouter);
 app.use("/api/chat",chatbotRouter);
 app.use('/api/scategories', scategorieRouter);
 app.use('/api/articles', articleRouter); 
+app.use('/api/users', userRouter);
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+module.exports = app;
